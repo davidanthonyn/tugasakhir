@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'User::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
 
 //$routes->get('admin/users', 'UserController::index', ['filter' => 'role:admin,superadmin']);
 
