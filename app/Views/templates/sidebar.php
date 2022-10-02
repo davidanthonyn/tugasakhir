@@ -9,8 +9,49 @@
         <div class="sidebar-brand-text mx-3">Apotek <sup>99</sup></div>
     </a>
 
+    <?php if (in_groups('admin')) : ?>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            User Management
+        </div>
+
+        <!-- Nav Item - User List -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('admin'); ?>">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>User List</span></a>
+        </li>
+
+    <?php endif; ?>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Home
+    </div>
+
+    <!-- Nav Item - Profile -->
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>My Profile</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Edit Profile</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+
 
     <!-- Heading -->
     <div class="sidebar-heading">

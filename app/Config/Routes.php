@@ -36,6 +36,12 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'User::index');
+$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+
+//$routes->get('admin/users', 'UserController::index', ['filter' => 'role:admin,superadmin']);
+
+
 
 
 /*
