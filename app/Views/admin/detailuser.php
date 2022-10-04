@@ -36,7 +36,7 @@
                                         <?php } ?>
                                     </li>
                                     <li class="list-group-item">
-                                        <small><a href="<?= base_url('admin'); ?>">&laquo; back to user list</a></small>
+                                        <small><a href="<?= base_url('admin/allusers'); ?>">&laquo; back to user list</a></small>
                                     </li>
                                 </ul>
                             </div>

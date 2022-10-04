@@ -12,8 +12,13 @@ class Admin extends BaseController
         $this->builder = $this->db->table('users');
     }
 
-
     public function index()
+    {
+        return view('admin/index');
+    }
+
+
+    public function allusers()
     {
         $data['title'] = 'User List';
 
@@ -30,10 +35,10 @@ class Admin extends BaseController
 
         $data['users'] = $query->getResult();
 
-        return view('admin/index', $data);
+        return view('admin/allusers', $data);
     }
 
-    public function detail($id = 0)
+    public function detailuser($id = 0)
     {
         $data['title'] = 'User Detail';
 
@@ -49,6 +54,6 @@ class Admin extends BaseController
             return redirect()->to('/admin');
         }
 
-        return view('admin/detail', $data);
+        return view('admin/detailuser', $data);
     }
 }
