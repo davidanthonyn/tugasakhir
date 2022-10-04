@@ -38,10 +38,9 @@ $routes->set404Override();
 $routes->get('/', 'User::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
-$routes->get('/admin/allusers', 'Admin::allusers', ['filter' => 'role:admin']);
-$routes->get('/admin/activitylog', 'Admin::activitylog', ['filter' => 'role:admin']);
+$routes->get('/allusers', 'Admin::allusers', ['filter' => 'role:admin']);
 $routes->get('/activitylog', 'Admin::activitylog', ['filter' => 'role:admin']);
-$routes->get('/admin/detailuser/(:num)', 'Admin::detailuser/$1', ['filter' => 'role:admin']);
+$routes->get('/detailuser/(:num)', 'Admin::detailuser/$1', ['filter' => 'role:admin']);
 //$routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
 
 //$routes->get('admin/users', 'UserController::index', ['filter' => 'role:admin,superadmin']);
