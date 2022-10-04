@@ -96,7 +96,7 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Settings</h6>
-                    <a class="collapse-item" href="<?= base_url('admin/info'); ?>">Pengaturan Sistem</a>
+                    <a class="collapse-item" href="<?= base_url('admin/settings'); ?>">Pengaturan Sistem</a>
                     <a class="collapse-item" href="<?= base_url('product/category'); ?>">Kategori Obat</a>
                     <a class="collapse-item" href="<?= base_url('product/taxes'); ?>">Pajak</a>
                     <a class="collapse-item" href="<?= base_url('payment'); ?>">Metode Pembayaran</a>
