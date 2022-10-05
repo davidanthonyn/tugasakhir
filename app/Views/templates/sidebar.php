@@ -23,14 +23,14 @@
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('admin'); ?>">
                 <i class="fa-solid fa-arrows-h"></i>
-                <span>Beranda</span></a>
+                <span>Dashboard</span></a>
         </li>
 
         <!-- Nav Item - Customer -->
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('customer'); ?>">
                 <i class="fas fa-fw fa-inbox"></i>
-                <span>Pelanggan</span></a>
+                <span>Produk</span></a>
         </li>
 
         <!-- Nav Item - Sales -->
@@ -97,7 +97,9 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Settings</h6>
                     <a class="collapse-item" href="<?= base_url('admin/settings'); ?>">Pengaturan Sistem</a>
-                    <a class="collapse-item" href="<?= base_url('product/category'); ?>">Kategori Obat</a>
+                    <a class="collapse-item" href="<?= base_url('product/category'); ?>">Kategori Produk</a>
+                    <a class="collapse-item" href="<?= base_url('admin/settings'); ?>">Pelanggan</a>
+                    <a class="collapse-item" href="<?= base_url('admin/settings'); ?>">Supplier</a>
                     <a class="collapse-item" href="<?= base_url('product/taxes'); ?>">Pajak</a>
                     <a class="collapse-item" href="<?= base_url('payment'); ?>">Metode Pembayaran</a>
                     <a class="collapse-item" href="<?= base_url('tokopedia'); ?>">Tokopedia</a>
