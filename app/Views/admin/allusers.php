@@ -112,3 +112,97 @@
 </div>
 
 <?= $this->endSection(); ?>
+
+<?= $this->section('scripts'); ?>
+
+<script>
+    function datauser() {
+        $.ajax({
+            url: "<?= base_url('user/index') ?>",
+            dataType: "json",
+            success: function(response) {
+                $('.viewdata').html(response.data);
+            }
+        })
+    }
+</script>
+
+<script>
+    $(document).ready(function() {
+        datauser();
+        $('#activityLogDataTable').DataTable();
+    });
+
+    $(document).ready(function() {
+
+        $(document).on('click', '.ajaxtambahuser-save', function() {
+            if ($.trim($('.fullname').val()).length == 0) {
+                error_fullname = 'Mohon masukkan nama lengkap Anda';
+                $('#error_fullname').text(error_fullname);
+            } else {
+                error_fullname = '';
+                $('#error_fullname').text(error_fullname);
+            }
+
+            if ($.trim($('.username').val()).length == 0) {
+                error_username = 'Mohon masukkan username Anda';
+                $('#error_username').text(error_username);
+            } else {
+                error_username = '';
+                $('#error_username').text(error_username);
+            }
+
+            if ($.trim($('.email').val()).length == 0) {
+                error_email = 'Mohon masukkan email Anda';
+                $('#error_email').text(error_email);
+            } else {
+                error_email = '';
+                $('#error_email').text(error_email);
+            }
+
+            if ($.trim($('.password_hash').val()).length == 0) {
+                error_pw = 'Mohon masukkan password Anda';
+                $('#error_password').text(error_pw);
+            } else {
+                error_pw = '';
+                $('#error_password').text(error_pw);
+            }
+
+            if ($.trim($('.confirm_password_hash').val()).length == 0) {
+                error_confirm = 'Mohon masukkan confirm password Anda';
+                $('#error_confirm').text(error_confirm);
+            } else {
+                error_confirm = '';
+                $('#error_confirm').text(error_confirm);
+            }
+
+            if (error_fullname != '' || error_username != '' || error_email != '' || error_pw != '' || error_confirm != '') {
+                return false;
+            } else {
+                var data = {
+                    'fullname': $('.fullname').val(),
+                    'username': $('.username').val(),
+                    'email': $('.email').val(),
+                    'password_hash': $('.password_hash').val(),
+                };
+
+
+                $.ajax({
+                    method: 'POST',
+                    url: "/user/tambah",
+                    data: data,
+                    success: function(data) {
+                        $('#tambahUserModal').modal('hide');
+                        $('#tambahUserModal').find('input').val('');
+
+
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.success(response.status);
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+<?= $this->endSection(); ?>

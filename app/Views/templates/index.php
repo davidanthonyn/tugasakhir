@@ -21,6 +21,9 @@
     <!-- Custom styles for this page -->
     <link href="<?= base_url(); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- Alertify JS CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+
 </head>
 
 <body id="page-top">
@@ -101,18 +104,11 @@
 
     <!-- Page level custom scripts -->
     <script src="<?= base_url(); ?>/js/demo/datatables-demo.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#activityLogDataTable').DataTable();
-        });
 
-        $(document).ready(function() {
+    <!-- Alertify JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
-            $(document).on('click', '.ajaxtambahuser-save', function() {
-                alert("hello");
-            });
-        });
-    </script>
+    <?= $this->renderSection('scripts'); ?>
 
 </body>
 

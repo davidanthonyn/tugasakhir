@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\UsersModel;
+
 class User extends BaseController
 {
     protected $db, $builder;
@@ -31,5 +33,28 @@ class User extends BaseController
         }
 
         return view('user/index', $data);
+    }
+
+
+
+    public function tambah()
+    {
+        $user = new UsersModel;
+        //Set waktu untuk created at dan updated at
+        $timezone = date_default_timezone_set('Asia/Jakarta'); # add your city to set local time zone
+        $now = date('Y-m-d H:i:s');
+        $data = [
+            'fullname' => $this->request->getPost('fullname'),
+            'username' => $this->request->getPost('username'),
+            'email' => $this->request->getPost('email'),
+            'password_hash' => PASSWORD_BCRYPT($this->request->getPost('passwordhash')),
+            'active' => 1,
+            'created_at' => $now,
+            'updated_at' => $now
+        ];
+
+        $user->save($data);
+        $data = ['status' => 'User Inserted Successfully'];
+        return $this->responses->setJSON($data);
     }
 }
